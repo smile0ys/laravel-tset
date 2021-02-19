@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('smile', function() {
+   echo "hello smile";
+});
+
+Route::view('view', 'welcome');
+
+Route::get('search/{search}', function($search) {
+    return "search index : ". $search;
+})->where('search', '[A-Za-z]+');
